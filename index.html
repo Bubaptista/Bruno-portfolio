@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Baptista — Head of Product | Fintech, Payments & Authentication</title>
+    <meta name="description"
+        content="Experienced Fintech Product Leader specializing in payments infrastructure, financial crime, and authentication. 10+ years driving product strategy at N26, Mambu, and beyond.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#121212',
+                        'secondary': '#335f4a',
+                        'green-dark': '#00371d',
+                        'green-mid': '#e5ebe7',
+                        'border-light': '#e2e2e2',
+                        'purple': '#4a249d',
+                        'orange': '#ff9b41',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tab switching */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: flex;
+        }
+
+        .tab-btn.active {
+            background: #00371d;
+            color: white;
+        }
+
+        /* Smooth fade */
+        .tab-content.active {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Work card hover */
+        .work-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Reference card */
+        .ref-card {
+            transition: transform 0.3s ease;
+        }
+
+        .ref-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Logo hover */
+        .logo-img {
+            transition: filter 0.3s ease, transform 0.3s ease;
+            filter: grayscale(40%);
+        }
+
+        .logo-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+
+        /* Stat counter animation */
+        .stat-number {
+            display: inline-block;
+        }
+
+        /* Nav link underline effect */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00371d;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Integration logo grid */
+        .integration-logo {
+            transition: all 0.3s ease;
+        }
+
+        .integration-logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-primary font-sans text-lg leading-relaxed overflow-x-hidden">
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
+            <a href="#" class="text-xl font-bold text-green-dark tracking-tight">Bruno<br class="sm:hidden">
+                Baptista</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-sm font-medium text-primary/70 hover:text-primary">About</a>
+                <a href="#solutions"
+                    class="nav-link text-sm font-medium text-primary/70 hover:text-primary">Solutions</a>
+                <a href="#experience"
+                    class="nav-link text-sm font-medium text-primary/70 hover:text-primary">Experience</a>
+                <a href="#works" class="nav-link text-sm font-medium text-primary/70 hover:text-primary">Works</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-primary/70 hover:text-primary">Contact</a>
+            </div>
+            <a href="#contact"
+                class="hidden md:inline-flex items-center gap-2 bg-green-dark text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-green-dark/90 transition">
+                Let's talk
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ==================== SECTION 1: HERO / QUICK INTRO ==================== -->
+    <section class="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-green-mid" id="hero">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div>
+                    <p class="text-sm font-semibold tracking-widest uppercase text-secondary mb-3">Hi there</p>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-green-dark leading-[1.05] mb-6">
+                        I'm Bruno<br>Baptista
+                    </h1>
+                    <p class="text-lg text-primary/70 max-w-lg mb-8 leading-relaxed">
+                        Experienced Fintech Product Leader specializing in payments infrastructure, financial crime, and
+                        authentication. I define vision, mentor high-performing teams, and deliver strong business
+                        outcomes.
+                    </p>
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 bg-green-dark text-white font-semibold px-7 py-3.5 rounded-full hover:bg-green-dark/90 transition text-base">
+                        Get in touch
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+
+                    <!-- Stats -->
+                    <div class="flex items-center gap-10 mt-12">
+                        <div>
+                            <p class="text-4xl font-extrabold text-green-dark stat-number">10+</p>
+                            <p class="text-sm text-primary/50 mt-1">years of<br>experience</p>
+                        </div>
+                        <div class="w-px h-14 bg-primary/10"></div>
+                        <div>
+                            <p class="text-4xl font-extrabold text-green-dark stat-number">30+</p>
+                            <p class="text-sm text-primary/50 mt-1">digital products<br>worked on</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Photo -->
+                <div class="flex justify-center lg:justify-end relative">
+                    <div class="relative">
+                        <div class="w-80 h-80 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl">
+                            <img src="Bruno Photo/Bruno photo.png" alt="Bruno Baptista"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Logos (sorted by market value) -->
+            <div class="mt-16 flex items-center gap-10 flex-wrap">
+                <img src="Companies /Accenture.png" alt="Accenture"
+                    class="h-7 w-auto max-w-[120px] object-contain logo-img">
+                <img src="Companies /N26.png" alt="N26" class="h-7 w-auto max-w-[120px] object-contain logo-img">
+                <img src="Companies /mambu.webp" alt="Mambu" class="h-7 w-auto max-w-[120px] object-contain logo-img">
+                <img src="Companies /valantic.png" alt="Valantic"
+                    class="h-7 w-auto max-w-[120px] object-contain logo-img">
+                <img src="Companies /DSSC.png" alt="DSSC" class="h-7 w-auto max-w-[120px] object-contain logo-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 2: WHAT DO I HELP WITH? (SUMMARY) ==================== -->
+    <section class="py-20 lg:py-28 bg-white" id="about">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Left Column -->
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-green-dark mb-6">What do I help with?</h2>
+                    <p class="text-primary/70 leading-relaxed mb-8">
+                        With over a decade of experience in fintech, I've led product teams through regulatory
+                        compliance, market expansion, and profitability at scale. I specialize in turning complex
+                        payment, authentication, and financial crime challenges into products that delight users and
+                        drive business growth.
+                    </p>
+
+                    <!-- Mini stats -->
+                    <div class="flex gap-10 mt-8">
+                        <div>
+                            <p class="text-3xl font-extrabold text-green-dark">8M+</p>
+                            <p class="text-sm text-primary/50 mt-1">customers<br>served</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-extrabold text-green-dark">30+</p>
+                            <p class="text-sm text-primary/50 mt-1">digital products<br>worked on</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-extrabold text-green-dark">4</p>
+                            <p class="text-sm text-primary/50 mt-1">European<br>markets</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Product Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-green-mid rounded-2xl p-6 flex flex-col items-start gap-3 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-dark" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-green-dark text-base">Payments & Infrastructure</h3>
+                        <p class="text-sm text-primary/60 leading-snug">SEPA, Cards, Cross-border, Open Banking, P2P
+                            payments</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-green-mid rounded-2xl p-6 flex flex-col items-start gap-3 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-dark" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-green-dark text-base">Fraud & Security</h3>
+                        <p class="text-sm text-primary/60 leading-snug">ML authorization, AML/KYC, Vishing prevention,
+                            ATO detection</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-green-mid rounded-2xl p-6 flex flex-col items-start gap-3 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-dark" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839-1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-green-dark text-base">Authentication</h3>
+                        <p class="text-sm text-primary/60 leading-snug">Biometric auth, PSD2/SCA compliance,
+                            Passwordless login</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-green-mid rounded-2xl p-6 flex flex-col items-start gap-3 hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-dark" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-green-dark text-base">Product Leadership</h3>
+                        <p class="text-sm text-primary/60 leading-snug">Vision & strategy, Team management, Regulatory
+                            stakeholders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 3: CUTTING-EDGE SOLUTIONS (INTEGRATIONS) ==================== -->
+    <section class="py-20 lg:py-28 bg-green-mid" id="solutions">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-green-dark mb-3">Delivering Cutting-Edge<br>Technology
+                Solutions</h2>
+            <p class="text-primary/60 max-w-2xl mb-10">
+                Throughout my career I've integrated and worked with industry-leading technology providers across
+                payments, authentication, and financial crime prevention.
+            </p>
+
+            <!-- Category Tabs (minimalist pill style) -->
+            <div class="inline-flex items-center gap-1 bg-green-dark/10 rounded-full p-1 mb-12">
+                <button onclick="showTab('auth')"
+                    class="tab-btn active px-5 py-2 rounded-full text-sm font-medium transition-all" data-tab="auth">
+                    Authentication
+                </button>
+                <button onclick="showTab('payments')"
+                    class="tab-btn px-5 py-2 rounded-full text-sm font-medium text-green-dark transition-all"
+                    data-tab="payments">
+                    Payments
+                </button>
+                <button onclick="showTab('fincrime')"
+                    class="tab-btn px-5 py-2 rounded-full text-sm font-medium text-green-dark transition-all"
+                    data-tab="fincrime">
+                    Financial Crime
+                </button>
+            </div>
+
+            <!-- Auth Tab -->
+            <div id="tab-auth" class="tab-content active flex-wrap gap-10 items-center">
+                <img src="Integrations/Authentication/Jumio.png" alt="Jumio"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Authentication/Keyless-Logo-768x432.png" alt="Keyless"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Authentication/TF-Logo.png" alt="ThreatFabric"
+                    class="h-8 object-contain integration-logo">
+            </div>
+
+            <!-- Payments Tab -->
+            <div id="tab-payments" class="tab-content flex-wrap gap-10 items-center">
+                <img src="Integrations/Payments/Mastercard.webp" alt="Mastercard"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/Stripe.png" alt="Stripe" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/Checkout.png" alt="Checkout.com"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/wise.png" alt="Wise" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/Deutsche-Bundesbank.png" alt="Deutsche Bundesbank"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/Form3.png" alt="Form3" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/IDEAL_Logo_2020.svg" alt="iDEAL"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/marqeta.png" alt="Marqeta" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/swift-logo.png" alt="SWIFT" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Payments/paytipper.png" alt="Paytipper"
+                    class="h-8 object-contain integration-logo">
+            </div>
+
+            <!-- Financial Crime Tab -->
+            <div id="tab-fincrime" class="tab-content flex-wrap gap-10 items-center">
+                <img src="Integrations/Financial crime/Dow_Jones.svg" alt="Dow Jones"
+                    class="h-8 object-contain integration-logo">
+                <img src="Integrations/Financial crime/GBG.png" alt="GBG" class="h-8 object-contain integration-logo">
+                <img src="Integrations/Financial crime/Stripe radar.png" alt="Stripe Radar"
+                    class="h-8 object-contain integration-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 4: WORK EXPERIENCE ==================== -->
+    <section class="py-20 lg:py-28 bg-white" id="experience">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-green-dark mb-12">Where I've made an impact</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- N26 -->
+                <div class="bg-green-mid rounded-2xl p-8 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="Companies /N26.png" alt="N26" class="h-8">
+                        <span class="text-xs text-primary/40 font-medium">Apr 2020 – Present</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-dark mb-1">Product Lead</h3>
+                    <p class="text-sm text-primary/50 mb-5">Barcelona & Berlin</p>
+                    <ul class="space-y-3 text-sm text-primary/70">
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Led product strategy across
+                            Payments, Authentication, and Financial Crime for 8M+ customers</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Launched Bizum, pagoPA,
+                            iDEAL, driving Primary Account Users from 11% to 15%</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> ML model generating
+                            €2.6M/year savings via reduced chargebacks</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Revamped SEPA
+                            infrastructure, closing 9 critical audit findings</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Grew cross-border revenue
+                            per MAU from €0.18 to €1.30</li>
+                    </ul>
+                </div>
+
+                <!-- Mambu -->
+                <div class="bg-green-mid rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="Companies /mambu.webp" alt="Mambu" class="h-8">
+                        <span class="text-xs text-primary/40 font-medium">Apr 2019 – Apr 2020</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-dark mb-1">Product Manager</h3>
+                    <p class="text-sm text-primary/50 mb-5">Amsterdam, Netherlands</p>
+                    <ul class="space-y-3 text-sm text-primary/70">
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Enabled payment gateway
+                            capabilities (SEPA/Cards) for next-gen neobanks</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Integrated Marqeta for card
+                            issuing and SEPA connectivity</li>
+                        <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Helped scale to €5B in
+                            monthly transaction volume</li>
+                    </ul>
+                </div>
+
+                <!-- Paymenta & Accenture stacked -->
+                <div class="space-y-8">
+                    <!-- Paymenta -->
+                    <div class="bg-green-mid rounded-2xl p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="Companies /DSSC.png" alt="DSSC / Paymenta" class="h-8">
+                            <span class="text-xs text-primary/40 font-medium">Jul 2017 – Apr 2019</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-dark mb-1">Product Manager</h3>
+                        <p class="text-sm text-primary/50 mb-5">Lisbon, Portugal</p>
+                        <ul class="space-y-3 text-sm text-primary/70">
+                            <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Built cross-border
+                                payments from 0→1</li>
+                            <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Integrated Jumio (KYC)
+                                & Checkout.com</li>
+                        </ul>
+                    </div>
+
+                    <!-- Accenture -->
+                    <div class="bg-green-mid rounded-2xl p-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="Companies /Accenture.png" alt="Accenture" class="h-8">
+                            <span class="text-xs text-primary/40 font-medium">Jun 2013 – Jul 2017</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-dark mb-1">Business Consultant</h3>
+                        <p class="text-sm text-primary/50 mb-5">Lisbon, Portugal</p>
+                        <ul class="space-y-3 text-sm text-primary/70">
+                            <li class="flex gap-2"><span class="text-green-dark mt-0.5">•</span> Digitalized payments
+                                workflows for enterprise clients across financial services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 5: MY WORKS (KEY ACHIEVEMENTS) ==================== -->
+    <section class="py-20 lg:py-28 bg-gray-50" id="works">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-green-dark mb-4">My Works</h2>
+            <p class="text-primary/60 max-w-2xl mb-12">Measurable outcomes from products I've led — from fraud
+                prevention ML models to cross-border payment infrastructure.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Work 1 -->
+                <div class="work-card bg-white rounded-2xl overflow-hidden border border-border-light">
+                    <div class="bg-green-dark p-8 pb-10">
+                        <p class="text-green-mid/80 text-sm font-medium uppercase tracking-wider mb-2">Machine Learning
+                            · Fraud Prevention</p>
+                        <h3 class="text-3xl font-extrabold text-white">€2.6M / Year Savings</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary/70 leading-relaxed mb-4">
+                            Led discovery and delivery of an ML authorization model with +7pt Gini improvement over
+                            Mastercard benchmark, significantly reducing fraud losses and customer service costs at N26.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <img src="Companies /N26.png" alt="N26" class="h-8 opacity-60">
+                            <span class="text-xs text-primary/40">N26 · 2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 2 -->
+                <div class="work-card bg-white rounded-2xl overflow-hidden border border-border-light">
+                    <div class="bg-[#003580] p-8 pb-10">
+                        <p class="text-blue-200/80 text-sm font-medium uppercase tracking-wider mb-2">Cross-border
+                            Payments · Revenue Growth</p>
+                        <h3 class="text-3xl font-extrabold text-white">4x Revenue Growth</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary/70 leading-relaxed mb-4">
+                            Grew cross-border payments revenue per MAU from €0.18 to €1.30 by migrating Wise integration
+                            from connected-partner to white-label infrastructure, expanding to 41 currencies.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <img src="Companies /N26.png" alt="N26" class="h-8 opacity-60">
+                            <span class="text-xs text-primary/40">N26 · 2021–2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 3 -->
+                <div class="work-card bg-white rounded-2xl overflow-hidden border border-border-light">
+                    <div class="bg-[#4a249d] p-8 pb-10">
+                        <p class="text-purple-200/80 text-sm font-medium uppercase tracking-wider mb-2">Authentication ·
+                            Biometrics</p>
+                        <h3 class="text-3xl font-extrabold text-white">€1.3M Cost Reduction</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary/70 leading-relaxed mb-4">
+                            Achieved 83% customer contact reduction by enabling biometrics via Keyless for login and
+                            phone repairing, saving €1.3M in customer support costs at N26.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <img src="Companies /N26.png" alt="N26" class="h-8 opacity-60">
+                            <span class="text-xs text-primary/40">N26 · 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 4 -->
+                <div class="work-card bg-white rounded-2xl overflow-hidden border border-border-light">
+                    <div class="bg-[#ff9b41] p-8 pb-10">
+                        <p class="text-orange-900/60 text-sm font-medium uppercase tracking-wider mb-2">Fraud Prevention
+                            · Rapid Delivery</p>
+                        <h3 class="text-3xl font-extrabold text-white">20% Vishing Reduction</h3>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-primary/70 leading-relaxed mb-4">
+                            Designed and shipped an anti-vishing call status feature in a 2-day sprint, saving
+                            €50K/month in customer fraud losses by alerting users to fraudulent calls in real-time.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <img src="Companies /N26.png" alt="N26" class="h-8 opacity-60">
+                            <span class="text-xs text-primary/40">N26 · 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 6: REFERENCES ==================== -->
+    <section class="py-20 lg:py-28 bg-white" id="references">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-green-dark mb-4">What people say</h2>
+            <p class="text-primary/60 max-w-2xl mb-12">Feedback from colleagues and partners I've had the pleasure of
+                working with.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Reference 1 -->
+                <div class="ref-card bg-green-mid rounded-2xl p-8">
+                    <div class="text-green-dark mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 opacity-30" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-primary/80 leading-relaxed mb-8 text-base">
+                        "Bruno has an exceptional ability to navigate complex regulatory environments while keeping the
+                        user experience front and center. His work on SEPA infrastructure at N26 was outstanding — he
+                        closed critical audit findings while simultaneously improving payment success rates."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-full flex items-center justify-center">
+                            <span class="text-green-dark font-bold text-lg">MK</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-green-dark text-sm">Maria K.</p>
+                            <p class="text-xs text-primary/50">Engineering Lead · N26</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reference 2 -->
+                <div class="ref-card bg-green-mid rounded-2xl p-8">
+                    <div class="text-green-dark mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 opacity-30" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-primary/80 leading-relaxed mb-8 text-base">
+                        "Working with Bruno on the Wise integration was a masterclass in product execution. He turned a
+                        complex multi-currency migration into a clean, phased rollout that quadrupled our cross-border
+                        revenue. A truly strategic product thinker."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-full flex items-center justify-center">
+                            <span class="text-green-dark font-bold text-lg">TS</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-green-dark text-sm">Thomas S.</p>
+                            <p class="text-xs text-primary/50">VP Partnerships · Wise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reference 3 -->
+                <div class="ref-card bg-green-mid rounded-2xl p-8">
+                    <div class="text-green-dark mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 opacity-30" fill="currentColor"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-primary/80 leading-relaxed mb-8 text-base">
+                        "Bruno transformed our authentication experience. His vision around the four pillars —
+                        Compliance, Ease of Use, Fraud Proof, and Experimentation — gave us a clear roadmap that
+                        improved login success rates dramatically while reducing account takeover."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-dark/10 rounded-full flex items-center justify-center">
+                            <span class="text-green-dark font-bold text-lg">LR</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-green-dark text-sm">Lisa R.</p>
+                            <p class="text-xs text-primary/50">Director of Product · N26</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER / CONTACT ==================== -->
+    <footer class="bg-green-dark text-white py-20 lg:py-28" id="contact">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left -->
+                <div>
+                    <p class="text-sm uppercase tracking-widest text-green-mid/60 font-medium mb-3">Bruno Baptista</p>
+                    <div class="space-y-1 text-sm text-green-mid/50 mt-8">
+                        <p>LinkedIn</p>
+                        <p>Email</p>
+                        <p>Barcelona, Spain</p>
+                    </div>
+                </div>
+
+                <!-- Right -->
+                <div class="lg:text-right">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight">
+                        Let's make <span class="text-orange">something</span><br>
+                        <span class="text-orange">amazing</span> together
+                    </h2>
+                    <a href="mailto:brunobaptista@outlook.com"
+                        class="inline-flex items-center gap-2 mt-8 bg-orange text-green-dark font-bold px-7 py-3.5 rounded-full hover:bg-orange/90 transition text-base">
+                        Let's talk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab switching script -->
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('text-green-dark');
+            });
+            // Show selected tab
+            document.getElementById('tab-' + tabId).classList.add('active');
+            // Activate button
+            const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+            activeBtn.classList.add('active');
+            activeBtn.classList.remove('text-green-dark');
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+
+</html>
