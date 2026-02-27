@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Baptista — Head of Product | Fintech, Payments & Authentication</title>
+    <style>
+        :root {
+            --bg-primary: #FDFDFD;
+            --bg-secondary: #F3F3F3;
+            --bg-tertiary: #EBEBEB;
+            --text-main: #1C1C1E;
+            --text-muted: #6B6B70;
+            --accent: #D97757;
+            /* Muted terracotta/orange accent typical of Claude Code UI */
+            --accent-hover: #C26346;
+            --border-light: rgba(28, 28, 30, 0.08);
+            --border-focus: rgba(28, 28, 30, 0.16);
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-pill: 9999px;
+
+            --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            --font-serif: "Newsreader", "Georgia", ui-serif, Cambria, Times, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Layout Container to mimic IDE editor view */
+        .app-container {
+            width: 100%;
+            max-width: 1400px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light);
+            background-color: var(--bg-primary);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Top Bar mimicking IDE tabs */
+        .top-bar {
+            height: 48px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            background-color: var(--bg-secondary);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-muted);
+            user-select: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 16px;
+            background-color: var(--bg-primary);
+            border-right: 1px solid var(--border-light);
+            border-left: 1px solid var(--border-light);
+            color: var(--text-main);
+            margin-right: -1px;
+            /* Overlap borders */
+        }
+
+        .tab::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .breadcrumbs {
+            margin-left: 16px;
+            display: flex;
+            gap: 8px;
+            opacity: 0.7;
+        }
+
+        .breadcrumbs span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumbs span::after {
+            content: "›";
+        }
+
+        .breadcrumbs span:last-child::after {
+            content: "";
+        }
+
+        /* Main Content Container */
+        .main-content {
+            padding: 60px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 40px 24px;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        h2 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "## ";
+            color: var(--border-focus);
+            margin-right: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            font-style: italic;
+            max-width: 38ch;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        /* Code/Syntax UI elements */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-pill);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-main);
+            margin-right: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--border-focus);
+        }
+
+        .tag-accent {
+            background-color: rgba(217, 119, 87, 0.1);
+            color: var(--accent);
+            border-color: rgba(217, 119, 87, 0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dotted var(--border-focus);
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        /* Profile Photo */
+        .header-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+
+        .avatar-container {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-subtle);
+            background-color: var(--bg-secondary);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.05) grayscale(10%);
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                flex-direction: column-reverse;
+                gap: 24px;
+            }
+        }
+
+        /* Grids & Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-focus);
+            box-shadow: var(--shadow-subtle);
+            transform: translateY(-2px);
+        }
+
+        /* Accordion Styling (Tabs) */
+        details.accordion {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            font-family: var(--font-sans);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        details.accordion:hover {
+            border-color: var(--border-focus);
+        }
+
+        details.accordion[open] {
+            box-shadow: var(--shadow-subtle);
+            background-color: var(--bg-primary);
+        }
+
+        details.accordion>summary {
+            padding: 20px;
+            cursor: pointer;
+            list-style: none;
+            /* Hide default arrow */
+            font-family: var(--font-mono);
+            font-weight: bold;
+            color: var(--text-main);
+            outline: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        details.accordion>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.accordion>summary::after {
+            content: "+";
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        details[open].accordion>summary::after {
+            content: "−";
+        }
+
+        .accordion-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-main);
+            line-height: 1.5;
+            font-size: 1.05rem;
+            border-top: 1px dashed var(--border-light);
+            margin-top: -10px;
+            padding-top: 20px;
+        }
+
+        /* Code Block styling for Impact section */
+        details.accordion.code-block {
+            padding: 0;
+            font-family: var(--font-mono);
+        }
+
+        details.accordion.code-block::before {
+            content: "output.log";
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background-color: var(--bg-primary);
+            padding: 0 8px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-pill);
+            z-index: 2;
+        }
+
+        details.accordion.code-block .code-title {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        details.accordion.code-block .code-desc {
+            font-family: var(--font-sans);
+        }
+
+        details.accordion.integration-category summary {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+
+        /* Integrations / Tech Stack Grid */
+        .integrations-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+        }
+
+        /* Tooltip */
+        .tooltip-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .tooltip-wrapper::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: normal;
+            width: max-content;
+            max-width: 250px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            line-height: 1.4;
+        }
+
+        .tooltip-wrapper::before {
+            content: "";
+            position: absolute;
+            bottom: calc(120% - 6px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--text-main) transparent transparent transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .tooltip-wrapper:hover::after,
+        .tooltip-wrapper:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .integration-logo {
+            height: 36px;
+            max-width: 120px;
+            object-fit: contain;
+            filter: grayscale(100%) opacity(0.5);
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-wrapper:hover .integration-logo {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 1px solid var(--border-light);
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+            padding-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -45px;
+            top: 24px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--bg-primary);
+            border: 2px solid var(--border-focus);
+            transition: border-color 0.2s;
+        }
+
+        .timeline-item:hover::before {
+            border-color: var(--accent);
+        }
+
+        .role-header-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .company-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            background: white;
+            padding: 6px;
+            border: 1px solid var(--border-light);
+            margin-right: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .role-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .role-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .role-company {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-dates,
+        .role-location {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .role-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .role-details {
+            list-style: none;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .role-details li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .role-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--border-focus);
+            font-weight: bold;
+        }
+
+        .role-details li strong {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            margin-top: 6rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            border: 1px solid var(--text-main);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-focus);
+            margin-left: 12px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px dashed var(--border-light);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Cursor Blinker mimicking terminal/prompt */
+        .blinker {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--accent);
+            vertical-align: text-bottom;
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        ::selection {
+            background-color: rgba(217, 119, 87, 0.2);
+            color: var(--text-main);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Top Bar / IDE Tabs -->
+        <header class="top-bar">
+            <div class="tab">Bruno.html</div>
+            <div class="breadcrumbs">
+                <span>src</span>
+                <span>portfolio</span>
+                <span>BrunoBaptista</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header>
+                <div class="header-section">
+                    <div>
+                        <h1>I'm Bruno Baptista</h1>
+                        <div class="contact-info">
+                            <span>✉️ <a href="mailto:Brunobaptista@outlook.com">Brunobaptista@outlook.com</a></span>
+                            <span>📍 Barcelona, Spain</span>
+                        </div>
+                        <p class="lead">Experienced Fintech Product Leader specializing in payments infrastructure,
+                            financial crime, and authentication.</p>
+                        <p>With over a decade of experience, I've led product teams through regulatory compliance,
+                            market expansion, and profitability. I have a proven ability to define vision, mentor
+                            high-performing teams, and deliver strong business outcomes within complex financial
+                            environments.</p>
+
+                        <div class="expertise-tabs" style="margin-top: 2.5rem;">
+                            <div class="tabs-header" style="margin-bottom: 12px;">
+                                <span class="tag tag-accent" data-tab="tab-product">Product Leadership</span>
+                                <span class="tag" data-tab="tab-payments">Payments & Infrastructure</span>
+                                <span class="tag" data-tab="tab-fraud">Fraud & Security</span>
+                                <span class="tag" data-tab="tab-auth">Authentication</span>
+                            </div>
+                            <div class="tabs-content"
+                                style="border: 1px solid var(--border-light); padding: 16px 20px; border-radius: var(--radius-md); background-color: var(--bg-secondary); font-family: var(--font-mono); font-size: 0.95rem; color: var(--text-main); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                                <div id="tab-product" class="tab-pane">
+                                    <strong style="color: var(--accent); margin-right: 8px;">></strong> Vision &
+                                    strategy, Team management, Regulatory stakeholders, AB testing, Multi-market
+                                </div>
+                                <div id="tab-payments" class="tab-pane" style="display: none;">
+                                    <strong style="color: var(--accent); margin-right: 8px;">></strong> SEPA
+                                    DD/CT/Instant, Cards (Mastercard/Visa), Cross-border, Open Banking, ACH, P2P
+                                </div>
+                                <div id="tab-fraud" class="tab-pane" style="display: none;">
+                                    <strong style="color: var(--accent); margin-right: 8px;">></strong> ML authorization
+                                    models, AML/KYC, Vishing prevention, ATO detection
+                                </div>
+                                <div id="tab-auth" class="tab-pane" style="display: none;">
+                                    <strong style="color: var(--accent); margin-right: 8px;">></strong> Biometric auth,
+                                    PSD2/PSD3/AML4&5D compliance, Customer onboarding journeys
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="avatar-container">
+                        <img src="Bruno Photo/Bruno photo.png" alt="Bruno Baptista" class="avatar">
+                    </div>
+                </div>
+            </header>
+
+
+
+            <section id="impacts">
+                <h2>Most recent key achievements <span class="blinker"></span></h2>
+                <p>Measurable outcomes from products I've led at scale.</p>
+
+                <details class="accordion code-block" open>
+                    <summary>
+                        <span class="code-title">&gt; €2.6M / Year Savings</span>
+                    </summary>
+                    <div class="accordion-content code-desc">
+                        Led discovery and delivery of an ML authorization model with +7pt Gini improvement over
+                        Mastercard benchmark, significantly reducing fraud losses and CS costs.
+                    </div>
+                </details>
+
+                <details class="accordion code-block">
+                    <summary>
+                        <span class="code-title">&gt; 4x Revenue Growth on Cross borders</span>
+                    </summary>
+                    <div class="accordion-content code-desc">
+                        Grew cross-border payments revenue per MAU from €0.18 to €1.30 by migrating Wise integration
+                        from connected-partner to white-label infrastructure model, expanding to 41 currencies.
+                    </div>
+                </details>
+
+                <details class="accordion code-block">
+                    <summary>
+                        <span class="code-title">&gt; €1.3M Customer contact reduction</span>
+                    </summary>
+                    <div class="accordion-content code-desc">
+                        Achieved 83% customer contact reduction by enabling biometrics via Keyless for login and phone
+                        repairing, yielding massive customer support cost savings.
+                    </div>
+                </details>
+
+                <details class="accordion code-block">
+                    <summary>
+                        <span class="code-title">&gt; 20% Vishing Loss Reduction</span>
+                    </summary>
+                    <div class="accordion-content code-desc">
+                        Designed and shipped an anti-vishing call status feature in a 2-day sprint, saving €50K/month in
+                        customer fraud losses.
+                    </div>
+                </details>
+            </section>
+
+            <section id="infrastructure">
+                <h2>Integrations & Infrastructure</h2>
+                <p>Throughout my career, I've integrated and partnered directly with the industry's leading financial
+                    infrastructure and risk platforms.</p>
+
+                <div class="integrations-container">
+                    <details class="accordion integration-category" open>
+                        <summary>Payments & Core Banking</summary>
+                        <div class="accordion-content logos-grid">
+                            <div class="tooltip-wrapper" data-tooltip="Refining acquiring flows for N26.">
+                                <img src="Integrations/Payments/Mastercard.webp" alt="Mastercard"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper" data-tooltip="Enabling account top-ups via bank cards.">
+                                <img src="Integrations/Payments/Stripe.png" alt="Stripe" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Providing a white-label solution to allow N26 users to send cross-border payments.">
+                                <img src="Integrations/Payments/wise.png" alt="Wise" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Allowing DSSC users to make cross-border payments using their bank cards.">
+                                <img src="Integrations/Payments/Checkout.png" alt="Checkout.com"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Integrating Marqeta with the Mambu platform for a plug-and-play experience.">
+                                <img src="Integrations/Payments/marqeta.png" alt="Marqeta" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Enabling incoming and outgoing SEPA Instant payments for N26 users.">
+                                <img src="Integrations/Payments/Form3.png" alt="Form3" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Supporting N26 ACH to send and receive SEPA Credit Transfers and Direct Debits.">
+                                <img src="Integrations/Payments/Deutsche-Bundesbank.png" alt="Deutsche Bundesbank"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Transitioning from EBICS to the SWIFT protocol for SEPA Credit Transfers and Direct Debits via ACH.">
+                                <img src="Integrations/Payments/swift-logo.png" alt="SWIFT" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Allowing Dutch N26 users to make local payments in the Netherlands.">
+                                <img src="Integrations/Payments/IDEAL_Logo_2020.svg" alt="iDEAL"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Enabling N26 Italy users to make domestic payments (e.g., pagoPA, Bollettino Postale).">
+                                <img src="Integrations/Payments/paytipper.png" alt="Paytipper" class="integration-logo">
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="accordion integration-category">
+                        <summary>Financial Crime & AML</summary>
+                        <div class="accordion-content logos-grid">
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Implementing name screening for onboarding, ongoing monitoring, and payment screening.">
+                                <img src="Integrations/Financial crime/Dow_Jones.svg" alt="Dow Jones"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper" data-tooltip="Enabling sanctions screening for DSSC users.">
+                                <img src="Integrations/Financial crime/GBG.png" alt="GBG" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Optimizing fraud detection rules to reduce fraud-related costs for N26.">
+                                <img src="Integrations/Financial crime/Stripe radar.png" alt="Stripe Radar"
+                                    class="integration-logo">
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="accordion integration-category">
+                        <summary>Authentication & KYC</summary>
+                        <div class="accordion-content logos-grid">
+                            <div class="tooltip-wrapper" data-tooltip="Introducing biometric authentication for N26.">
+                                <img src="Integrations/Authentication/Keyless-Logo-768x432.png" alt="Keyless"
+                                    class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Enabling compliant user onboarding for DSSC users.">
+                                <img src="Integrations/Authentication/Jumio.png" alt="Jumio" class="integration-logo">
+                            </div>
+                            <div class="tooltip-wrapper"
+                                data-tooltip="Providing risk intelligence to help N26 reduce fraud with new risk signals.">
+                                <img src="Integrations/Authentication/TF-Logo.png" alt="ThreatFabric"
+                                    class="integration-logo">
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <div class="timeline">
+                    <!-- N26 -->
+                    <div class="timeline-item">
+                        <div class="role-header-wrapper">
+                            <img src="Companies/N26.png" alt="N26" class="company-logo">
+                            <div class="role-header">
+                                <span class="role-title">Product Lead</span>
+                                <div class="role-company">N26</div>
+                                <div class="role-meta">
+                                    <span class="role-dates">Apr 2020 – Present</span>
+                                    <span class="role-location">Barcelona, Spain · Berlin, Germany</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="role-details">
+                            <li>Led product strategy and execution across Payments, Authentication, and Financial Crime
+                                for N26 (<strong>8M+ customers</strong> across 4 core markets).</li>
+                            <li>Defined and executed localization strategy across Spain, Italy, and the NL, launching
+                                Bizum, pagoPA, iDEAL, and Social Security payments and driving Primary Account User
+                                share from <strong>11% to 15%</strong>.</li>
+                            <li>Revamped SEPA infrastructure with Deutsche Bundesbank, closing <strong>9 critical audit
+                                    findings</strong> and removing BaFin imposed user growth cap. Subsequently launched
+                                SEPA Instant.</li>
+                            <li>Shaped Authentication vision around four pillars targeting <strong>98% login success
+                                    rate</strong>, under 2s access time, and 50% ATO reduction.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mambu -->
+                    <div class="timeline-item">
+                        <div class="role-header-wrapper">
+                            <img src="Companies/mambu.webp" alt="Mambu" class="company-logo">
+                            <div class="role-header">
+                                <span class="role-title">Product Manager</span>
+                                <div class="role-company">Mambu</div>
+                                <div class="role-meta">
+                                    <span class="role-dates">Apr 2019 – Apr 2020</span>
+                                    <span class="role-location">Amsterdam, Netherlands</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="role-details">
+                            <li>Enabled Mambu's payment gateway capabilities (SEPA/Cards) as the platform scaled to
+                                serve the next neobanks generation.</li>
+                            <li>Strengthened daily banking foundation by integrating Marqeta for card issuing and SEPA
+                                connectivity.</li>
+                            <li>Helped scale platform to process <strong>€5B in monthly transaction volume</strong>,
+                                positioning Mambu as a leading cloud banking provider.</li>
+                        </ul>
+                    </div>
+
+                    <!-- DSSC / Paymenta -->
+                    <div class="timeline-item">
+                        <div class="role-header-wrapper">
+                            <img src="Companies/DSSC.png" alt="Paymenta" class="company-logo">
+                            <div class="role-header">
+                                <span class="role-title">Product Manager</span>
+                                <div class="role-company">Paymenta (DSSC)</div>
+                                <div class="role-meta">
+                                    <span class="role-dates">Jul 2017 – Apr 2019</span>
+                                    <span class="role-location">Lisbon, Portugal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="role-details">
+                            <li>Built cross-border payments product from <strong>0 to 1</strong>, integrating
+                                third-party services to reach MVP quickly.</li>
+                            <li>Integrated Jumio (KYC) and Checkout.com (payments) to enable cross-border money movement
+                                between users.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Accenture -->
+                    <div class="timeline-item">
+                        <div class="role-header-wrapper">
+                            <img src="Companies/Accenture.png" alt="Accenture" class="company-logo">
+                            <div class="role-header">
+                                <span class="role-title">Business Consultant</span>
+                                <div class="role-company">Accenture & Abaco Consultores</div>
+                                <div class="role-meta">
+                                    <span class="role-dates">Jun 2013 – Jul 2017</span>
+                                    <span class="role-location">Lisbon, Portugal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="role-details">
+                            <li>Digitalized complex payment workflows (accounts receivables and payables) for enterprise
+                                clients across the financial services sector.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div>
+                    <a href="https://www.linkedin.com/in/brupbaptista/" target="_blank" class="btn btn-primary">Connect
+                        on LinkedIn</a>
+                    <a href="mailto:Brunobaptista@outlook.com" class="btn btn-secondary">Send an Email</a>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <div>© 2026 Bruno Baptista</div>
+                <div style="text-align: right;">
+                    <strong>M.Sc. Finance / B.Sc. Bank Management</strong><br>
+                    ISEG, Universidade de Lisboa
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // Subtle interactivity typical of Claude desktop interface
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.stat-card, .timeline-item');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.borderColor = 'var(--border-focus)';
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.borderColor = '';
+                });
+            });
+
+            // Make sure clicking on summary handles the default details mechanism smoothly
+            const detailElements = document.querySelectorAll('details.accordion');
+            detailElements.forEach(detail => {
+                // When one accordion opens, you could choose to close others,
+                // but standard HTML details behavior allows multiple to be open.
+                // It is kept as-is since that matches the 'tab' expand behavior perfectly.
+            });
+
+            // Header Tabs JS
+            const tags = document.querySelectorAll('.tabs-header .tag');
+            const panes = document.querySelectorAll('.tab-pane');
+
+            tags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    tags.forEach(t => t.classList.remove('tag-accent'));
+                    panes.forEach(pane => pane.style.display = 'none');
+
+                    tag.classList.add('tag-accent');
+                    const targetId = tag.getAttribute('data-tab');
+                    if (targetId) {
+                        document.getElementById(targetId).style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
